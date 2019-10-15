@@ -1,6 +1,6 @@
 # Burpee
 ## About
-Extracts headers and post data from intercepted HTTP request file.
+A python module to extract headers and POST data from a file containing intercepted HTTP request.
 
 Let's say we have a file named <b>request.txt</b> that contains following HTTP request:
 ```
