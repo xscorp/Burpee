@@ -1,5 +1,3 @@
-import requests
-
 def parse_request(file_object):
 	line = ""
 	headers = {}
@@ -16,5 +14,4 @@ def parse_request(file_object):
 				})
 		else:
 			post_data = post_data + line
-
 	return headers , post_data
