@@ -32,3 +32,7 @@ Here <b>Burpee</b> comes to save the day. It simply accepts name of the file con
 <img src="media/demonstration.gif">
 
 As demonstrated in the above proofs, once we get dictionary of headers and post data, we can simply pass these headers and post data to functions like requests.get() , requests.post() etc.
+
+### Creator: 
+Twitter: <a href="https://twitter.com/xscorp7">@xscorp7</a><br>
+Github: <a href="https://github.com/xscorp">xscorp(GITHUB)</a>
