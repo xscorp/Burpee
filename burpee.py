@@ -15,3 +15,13 @@ def parse_request(file_object):
 		else:
 			post_data = post_data + line
 	return headers , post_data
+
+def dump_headers(file_object):
+	headers , post_data = parse_request(file_object)
+	for header , value in headers.items():
+		print(header , ": " , value , sep = "")
+
+def dump_data(file_object):
+	headers , post_data = parse_request(file_object)
+	print(post_data)
+
