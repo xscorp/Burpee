@@ -1,8 +1,9 @@
-def parse_request(file_object):
+def parse_request(file_name):
 	line = ""
 	headers = {}
 	post_data = ""
 	header_collection_done = False
+	file_object = open(file_name , "r")
 	file_object.readline()
 	for line in file_object.readlines():
 		if header_collection_done is False:
