@@ -46,5 +46,3 @@ The request() function only supports two methods i.e. GET and POST
 ### Creator: 
 Twitter: <a href="https://twitter.com/xscorp7">@xscorp7</a><br>
 Github: <a href="https://github.com/xscorp">xscorp(GITHUB)</a>
-
-<!-- test -->
