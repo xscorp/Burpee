@@ -1,5 +1,12 @@
 import requests
 
+debug = False
+
+def print_debug(*msg):
+	if debug == True:
+		for info in msg:
+			print(info , end = "")
+
 def parse_request(file_name):
 	line = ""
 	headers = {}
@@ -14,7 +21,7 @@ def parse_request(file_name):
 				header_collection_done = True
 			else:
 				headers.update({
-					line.split(":")[0].strip() : line.split(":")[1].strip()
+					line[0:line.find(":")].strip() : line[line.find(":")+1 :].strip()
 				})
 		else:
 			post_data = post_data + line
@@ -47,9 +54,21 @@ def request(file_name , https = False , proxies = None):
 	method_name , resource_name = get_method_and_resource(file_name)
 	protocol = "https" if (https is True) else "http"
 	url = protocol + "://" + headers["Host"] + resource_name
+
+	#debug information
+	print_debug("DEBUG INFORMATION")
+	print_debug("\n==========================================")
+	print_debug("\nProtocol : " , protocol)
+	print_debug("\n\nMethod name : " , method_name)
+	print_debug("\n\nResource requested : " , resource_name)
+	print_debug("\n\nPost data : " , post_data)
+	print_debug("\n\nHeaders : " , headers)
+	print_debug("\n\nProxies : " , proxies)
+	print_debug("\n==========================================\n\n")
+
 	if method_name.lower() == "get":
 		response = requests.get(url = url , headers = headers , proxies = proxies , verify = False)
 	elif method_name.lower() == "post":
-		response = requests.post(url = url , headers = headers , data = data , proxies = proxies , verify = False)
+		response = requests.post(url = url , headers = headers , data = post_data , proxies = proxies , verify = False)
 	return response
 
